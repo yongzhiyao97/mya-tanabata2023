@@ -1,0 +1,635 @@
+body {
+    /*
+    background: url(https://i.pinimg.com/originals/e5/2a/70/e52a703525153bdf64becfc4a0058aec.gif) no-repeat;
+    */
+    background: url(https://pic.pimg.tw/rainsru/1628651530-3074418325-g.gif) no-repeat;
+    background-size: cover;
+    background-position: center -12vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* POP-UP BOX [S] */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: opacity 1s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.pop-up {
+    top: 50%;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(to left, #ed4264, #ffedbc);
+    border-radius: 5px;
+    width: 35%;
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+
+.pop-up h2 {
+    margin-top: 0;
+    color: rgba(55, 0, 92, 0.438);
+    font-family: Impact;
+}
+
+.pop-up .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: linear-gradient(to right, #d31027, #ea384d);
+}
+
+.pop-up .close:hover {
+    transform: rotate(180deg);
+    color: linear-gradient(to left, #d31027, #ea384d);;
+}
+
+.pop-up .content {
+    max-height: 30%;
+    overflow: auto;
+    font-family: Georgia;
+    font-size: 20pt;
+    color: rgba(55, 0, 92, 0.438);
+}
+/* POP-UP BOX [E] */
+
+/* FLY ENVELOPE AND LETTER [S] */
+.fly-envelope {
+    top: 5%;
+    position: relative;
+    transition: all 1s ease-in-out;
+    perspective: 450px;
+}
+
+.fly-envelope .wing {
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    border-radius: 12px 20px 60px 20px;
+    width: 120px;
+    height: 50px; 
+    margin-top: 80px;
+    position: absolute;
+}
+
+.fly-envelope .wing.right {
+    margin-left: -60px;
+    left: 50%;
+    animation: flap1 1s infinite;
+    border-bottom: 3px solid rgba(0, 0, 0, .08);
+    border-radius: 12px 20px 60px 20px;
+    transform: rotate(-10deg) translate(250px,0);
+}
+
+@keyframes flap1 {
+    0% {
+        transform: rotate(-10deg) translate(250px,0);
+    }
+    
+    50% {
+        transform: rotate(-5deg) translate(250px,0);
+    }
+}
+
+.fly-envelope .wing.right:before {
+    position: absolute;
+    content: '';
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    width: 70%;
+    height: 70%;
+    border-bottom: 3px solid rgba(0, 0, 0, .08);
+    border-radius: 20px 20px 60px 20px;
+    transform: rotate(20deg) translate(-1px,0);
+    margin-top: 38px;
+}
+
+.fly-envelope .wing.right:after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    width: 40%;
+    transform: rotate(29deg) translate(-8px,0);
+    height: 30%;
+    border-bottom: 3px solid rgba(0,0,0,.08);
+    border-radius: 0px 0px 60px 70px;
+    margin-top: 66px;
+}
+
+.fly-envelope .wing.left {
+    border-radius: 12px 20px 20px 60px;
+    margin-left: -60px;
+    left: 50%;
+    animation: flap2 1s infinite;
+    border-bottom: 3px solid rgba(0,0,0,.08);
+    transform: rotate(10deg) translate(-248px, 0);
+}
+
+@keyframes flap2 {
+    0% {
+        transform:rotate(10deg) translate(-248px,0);
+    }
+    
+    50% {
+        transform:rotate(5deg) translate(-248px,0);
+    }
+}
+
+
+.fly-envelope .wing.left:before {
+    position: absolute;
+    content: '';
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    width: 70%;
+    border-bottom: 3px solid rgba(0,0,0,.08);
+    transform: translate(46%,0) rotate(-20deg);
+    height: 60%;
+    border-radius: 12px 20px 70px 70px;
+    margin-top: 40px;
+}
+
+.fly-envelope .wing.left:after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    width: 40%;
+    border-bottom: 3px solid rgba(0,0,0,.08);
+    height: 30%;
+    transform: translate(164%,0) rotate(-34deg);
+    border-radius: 0px 0px 70px 60px;
+    margin-top: 58px;
+}
+
+.fly-envelope .heart{
+    position: absolute;
+    width: 120px;
+    z-index: 99999;
+    height: 100px;
+    margin-left: -50px;
+    left: 50%;
+    animation: heart 1s infinite;
+    transform: scale(.8);
+    transition: .6s;
+    margin-top: 40px;
+}
+
+.fly-envelope .heart:before, 
+.fly-envelope .heart:after{
+    content: "";
+    width: 60px;
+    height: 100px;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    border-radius: 50px 50px 6px 6px;
+    background: crimson;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.fly-envelope .heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(.8) translate(0,0);
+    }
+    
+    50% {
+        transform: scale(.92) translate(0, 12px);
+    }
+    
+    100% {
+        transform:scale(.8);
+    }
+}
+
+.fly-envelope .envelope {
+    width: 320px;
+    margin: 100px auto;
+    height: 200px;
+    position: relative;
+    background: #f857a6;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px -3px #cc2b5e;
+    animation: floaty 1s infinite;
+}
+
+@keyframes floaty {
+    0% {
+        transform:translate(0,0);
+    }
+    
+    50% {
+        transform:translate(0, 12px);
+    }
+}
+
+.fly-envelope .envelope .top, 
+.fly-envelope .envelope .bottom {
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    width: 0;
+    height: 0;
+    position: relative;
+}
+
+.fly-envelope .envelope .top {
+    border-bottom: 100px solid #f2709c;
+    top: -100px;
+    transform-origin: bottom;
+    z-index: 3;
+    transition: all .8s ease;
+    transform: rotateX(0deg);
+}
+
+.fly-envelope .envelope .bottom {
+    border-bottom: 140px solid #f857a6;
+    top: -40px;
+    z-index: 4;
+}
+
+.fly-envelope .envelope .left, 
+.fly-envelope .envelope .right {
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    top: 0;
+    z-index: 4;
+}
+
+.fly-envelope .envelope .left {
+    border-left: 160px solid #cc2b5e;
+    position: absolute;
+    left: 0;
+}
+
+.fly-envelope .envelope .right {
+    border-right: 160px solid #cc2b5e;
+    position: absolute;
+    right: 0;
+}
+
+.fly-envelope .envelope .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s ease;
+    z-index: 3;
+    transition-delay: 0.4s;
+    top: -35%;
+}
+
+.fly-envelope .envelope .back .paper {
+    width: 90%;
+    height: 90%;
+    background: #fbd3e9;
+    margin: 6px auto 0;
+    box-shadow: 0px 0px 2px 0px #909090;
+    transition: all 0.5s ease-out;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fly-envelope .envelope.fold .back {
+    z-index: 3;
+    transition-delay: 0.3s;
+    top: 0;
+}
+
+.fly-envelope .envelope.fold .top {
+    transition-delay: .6s;
+    transform: rotateX(180deg);
+    z-index: 6;
+}
+
+.fly-envelope .envelope .back .paper .line {
+    height: 5px;
+    background: #999;
+    width: 10%;
+    margin: 4px 0;
+}
+
+.fly-envelope .envelope .back .paper .text {
+    width: 10%;
+    margin: 2px 0;
+    visibility: "hidden";
+}
+
+.fly-envelope .envelope .back .paper .line.one {
+    width: 50%;
+}
+
+.fly-envelope .envelope .back .paper .line.two {
+    width: 30%;
+}
+
+.fly-envelope .envelope .back .paper .line.three {
+    width: 80%;
+}
+
+.fly-envelope .envelope .back .paper .line.four {
+    width: 30%;
+}
+
+.fly-envelope .envelope .back .paper .line.five {
+    width: 50%;
+}
+
+.fly-envelope .envelope .back .paper .line.six {
+    width: 10%;
+}
+
+.fly-envelope .envelope .back .paper .text.one {
+    position: absolute;
+    top: -1px;
+    color: #000000;
+}
+
+.fly-envelope .envelope .back .paper .text.two,
+.fly-envelope .envelope .back .paper .text.three,
+.fly-envelope .envelope .back .paper .text.four,
+.fly-envelope .envelope .back .paper .text.five,
+.fly-envelope .envelope .back .paper .text.six {
+    position: relative;
+    color: #000000;
+}
+
+.fly-envelope .envelope .back .paper .text.one,
+.fly-envelope .envelope .back .paper .text.five, 
+.fly-envelope .envelope .back .paper .text.six {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+
+.fly-envelope .envelope .back .paper .text.two,
+.fly-envelope .envelope .back .paper .text.three,
+.fly-envelope .envelope .back .paper .text.four {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 37px;
+}
+
+.fly-envelope .envelope .back .paper .text.two {
+    top: -15px;
+}
+
+.fly-envelope .envelope .back .paper .text.three {
+    top: -5px;
+}
+
+.fly-envelope .envelope .back .paper .text.four {
+    top: 5px
+}
+
+.fly-envelope .envelope .back .paper .text.five {
+    top: 15px;
+}
+.fly-envelope .envelope .back .paper .text.six {
+    top: 10px;
+}
+
+.fly-envelope .envelope .back .little-heart {
+    position: absolute;
+}
+
+.fly-envelope .envelope .back .little-heart .one, 
+.fly-envelope .envelope .back .little-heart .two, 
+.fly-envelope .envelope .back .little-heart .three, 
+.fly-envelope .envelope .back .little-heart .four, 
+.fly-envelope .envelope .back .little-heart .five {
+    background-color: red;
+    display: inline-block;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 10px;
+    top: 50px;
+}
+
+.fly-envelope .envelope .back .little-heart .one:before, 
+.fly-envelope .envelope .back .little-heart .one:after, 
+.fly-envelope .envelope .back .little-heart .two:before, 
+.fly-envelope .envelope .back .little-heart .two:after, 
+.fly-envelope .envelope .back .little-heart .three:before, 
+.fly-envelope .envelope .back .little-heart .three:after, 
+.fly-envelope .envelope .back .little-heart .four:before, 
+.fly-envelope .envelope .back .little-heart .four:after, 
+.fly-envelope .envelope .back .little-heart .five:before, 
+.fly-envelope .envelope .back .little-heart .five:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+}
+
+.fly-envelope .envelope .back .little-heart .one:before, 
+.fly-envelope .envelope .back .little-heart .two:before, 
+.fly-envelope .envelope .back .little-heart .three:before, 
+.fly-envelope .envelope .back .little-heart .four:before, 
+.fly-envelope .envelope .back .little-heart .five:before {
+    top: -5px;
+    left: 0;
+}
+
+.fly-envelope .envelope .back .little-heart .one:after, 
+.fly-envelope .envelope .back .little-heart .two:after, 
+.fly-envelope .envelope .back .little-heart .three:after, 
+.fly-envelope .envelope .back .little-heart .four:after, 
+.fly-envelope .envelope .back .little-heart .five:after {
+    left: 5px;
+    top: 0;
+}
+
+.fly-envelope .envelope .back .little-heart .one {
+    left: 10px;
+    animation: little-heart-pop-up 1s ease-out infinite; 
+    visibility: hidden;
+}
+
+.fly-envelope .envelope .back .little-heart .two {
+    left: 30px;
+    animation: little-heart-pop-up 2s ease-out infinite; 
+    visibility: hidden;
+}
+
+.fly-envelope .envelope .back .little-heart .three {
+    left: 50px;
+    animation: little-heart-pop-up 1.5s ease-out infinite;
+    visibility: hidden;
+
+}
+
+.fly-envelope .envelope .back .little-heart .four {
+    left: 70px;
+    animation: little-heart-pop-up 2.3s ease-out infinite;
+    visibility: hidden;
+}
+
+.fly-envelope .envelope .back .little-heart .five {
+    left: 90px;
+    animation: little-heart-pop-up 1.7s ease-out infinite;
+    visibility: hidden;
+}
+
+.fly-envelope .envelope .back .little-heart .visible-little-heart {
+    visibility: visible;
+}
+
+@keyframes little-heart-pop-up {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(0.3);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) rotate(-45deg) scale(1.3);
+        opacity: 0.5;
+    }
+}
+/* FLY ENVELOPE AND LETTER [E] */
+@media screen and (max-width: 700px){
+    body {
+        background-size: 220% 100%;
+    }
+
+    .pop-up {
+        width: 80%;
+        top: 45%
+    }
+
+    .fly-envelope {
+        top: 8%;
+    }
+
+    .fly-envelope .envelope {
+        width: 160px;
+        height: 100px;
+    }
+    
+    .fly-envelope .envelope .top, 
+    .fly-envelope .envelope .bottom {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+    }
+    
+    .fly-envelope .envelope .top {
+        border-bottom: 50px solid #f2709c;
+        top: -50px;
+    }
+    
+    .fly-envelope .envelope .bottom {
+        border-bottom: 70px solid #f857a6;
+        top: -20px;
+    }
+    
+    .fly-envelope .envelope .left, 
+    .fly-envelope .envelope .right {
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+    }
+    
+    .fly-envelope .envelope .left {
+        border-left: 80px solid #cc2b5e;
+    }
+    
+    .fly-envelope .envelope .right {
+        border-right: 80px solid #cc2b5e;
+    }
+    
+    .fly-envelope .envelope .back .paper .line {
+        height: 3px;
+    }
+
+    
+    .fly-envelope .envelope .back .paper .line.one {
+        width: 50%;
+    }
+    
+    .fly-envelope .envelope .back .paper .line.two {
+        width: 30%;
+    }
+    
+    .fly-envelope .envelope .back .paper .line.three {
+        width: 80%;
+    }
+    
+    .fly-envelope .envelope .back .paper .line.four {
+        width: 30%;
+    }
+    
+    .fly-envelope .envelope .back .paper .line.five {
+        width: 50%;
+    }
+    
+    .fly-envelope .envelope .back .paper .line.six {
+        width: 10%;
+    }
+    
+    .fly-envelope .envelope .back .paper .text.one,
+    .fly-envelope .envelope .back .paper .text.five, 
+    .fly-envelope .envelope .back .paper .text.six {
+        font-size: 13.5px;
+    }
+    
+    .fly-envelope .envelope .back .paper .text.two,
+    .fly-envelope .envelope .back .paper .text.three,
+    .fly-envelope .envelope .back .paper .text.four {
+        font-size: 15px;
+    }
+    
+    .fly-envelope .heart{
+        left: 54%;
+        margin-top: 20px;
+    }
+
+    .fly-envelope .heart:before,
+    .fly-envelope .heart:after{
+        width: 30px;
+        height: 50px;
+        left: 30px;
+        top: 0;
+        border-radius: 25px 25px 3px 3px;
+    }
+
+    .fly-envelope .heart:after{
+        left: 0;
+    }
+
+    .fly-envelope .wing {
+        border-radius: 6px 10px 30px 10px;
+        width: 80px;
+        margin-top: 60px;
+    }
+    
+    .fly-envelope .wing.right {
+        margin-left: -45px;
+        left: 20%;
+    }
+    
+    .fly-envelope .wing.left {
+        margin-left: 20px;
+        left: 65%;
+    }
+    
+}
