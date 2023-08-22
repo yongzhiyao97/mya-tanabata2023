@@ -105,17 +105,17 @@ $( document ).ready(function() {
                         */
                         "background": `url(https://play-lh.googleusercontent.com/swRBZ4PhoWgEMu2PNMg9hF5uUpBrqIH1JBwcydSK8Bo5rQ28dVmj4j-MNeW0esXcV9I=w800-h500-rw) no-repeat`,
                     });
-                    $("div.paper > span.text.one").html("给可爱老婆 &hearts; 柯美珍,");
+                    $("div.paper > span.text.one").html("给可爱老婆 &hearts; 柯美珍 &#128103;,");
                     /*
                     $("div.paper > span.text.two").html("Please be happy because<br/><q>Your SMILE &#128516; Gives COLOR To MY LIFE</q>");
                     $("div.paper > span.text.three").html("<q>Loving You Is A FULL Time Job<br/>&nbsp;BUT I Love My Carreer.</q>");
                     $("div.paper > span.text.four").html("I Love You Forever and Always");
                     */
-                    $("div.paper > span.text.two").html("七夕快乐 !<br/>You will always be temperamental, the most special and attractive in my heart!");
+                    $("div.paper > span.text.two").html("七夕快乐 !&#128144;<br/>You will always be temperamental, the most special and attractive in my heart &#128141;");
                     $("div.paper > span.text.three").html("No matter what the future holds, you will still be the person I forever love the most!");
                     $("div.paper > span.text.four").html("Before end, I'm so SORRY for my FAULT !!");
-                    $("div.paper > span.text.five").html("I LOVE TOU TILL END OF MY LIFE");
-                    $("div.paper > span.text.six").html("没用的杨子嶢 上");
+                    $("div.paper > span.text.five").html("I LOVE TOU TILL END OF MY LIFE &#128107;");
+                    $("div.paper > span.text.six").html("没用的杨子嶢 &#128102; 上");
                     
                 }, 3500);
 
